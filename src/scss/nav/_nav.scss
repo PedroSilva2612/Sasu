@@ -1,0 +1,45 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+
+    @include m.desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__link{
+        cursor: pointer;
+        position: relative;
+    }
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: .2rem;
+    width: 100%;
+    background: v.$blanco;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s ease-in-out;
+}
+
+.nav__link:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}

@@ -1,3 +1,79 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+body{
+    background-color: v.$gris;
+}
+
+.header{
+    background-color: v.$primario;
+    color: v.$blanco;
+    
+    @include m.desktop { 
+        background-color: unset;
+        background-image: url(../../../build/img/Bg-Header.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 102rem;
+    }
+
+    &__grid{
+        @include m.desktop { 
+            margin-top: 4rem;
+            @include m.grid(2,1fr);
+            align-items: center;
+        }
+    }
+
+    &__title{
+        text-align: center;
+
+        @include m.desktop { 
+            text-align: left;
+            max-width: 45rem;
+        }
+    }
+
+    &__parragraph{
+        text-align: center;
+
+        @include m.desktop { 
+            text-align: left;
+            max-width: 40rem;
+        }
+    }
+
+    &__ctaBox{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        
+
+        @include m.desktop { 
+            justify-content: left;
+        }
+    }
+
+    &__cta{
+        background-color: v.$blanco;
+        color: v.$negro;
+        padding: 1.5rem;
+        font-weight: 700;
+        border-radius: 1rem;
+        transition-property: background-color;
+        transition-duration: .3s;
+
+        &:hover{
+            background-color: v.$gris;
+        }
+    }
+
+    &__img{
+        margin-top: 2rem;
+
+        @include m.tablet { 
+            margin: 2rem auto 0 auto;
+        }
+    }
+}

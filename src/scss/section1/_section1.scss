@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.section1{
+    margin-top: 5rem;
+
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    &__card{
+        padding: 3rem 1.5rem;
+        background-color: v.$blanco;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    &__cardTitle{
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    &__cardParragraph{
+        text-align: center;
+        line-height: 0;
+    }
+
+    &__boxes{
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__box {
+        background-color: v.$blanco;
+        padding: 1rem 5rem;
+        text-align: center;
+        border-radius: 2rem 0 2rem 2rem;
+    }
+}
