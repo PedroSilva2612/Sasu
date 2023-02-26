@@ -1,44 +1,56 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
 
-.section1{
+.section1 {
     margin-top: 5rem;
 
-    &__grid{
+    &__grid {
         display: grid;
         grid-template-columns: 1fr;
+
+        @include m.desktop {
+            @include m.grid(3, 1fr);
+            align-items: center;
+            gap: 2rem;
+        }
     }
 
-    &__card{
-        padding: 3rem 1.5rem;
-        background-color: v.$blanco;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
-    }
-
-    &__cardTitle{
+    &__cardTitle {
         font-weight: 700;
         font-size: 2rem;
-        margin-bottom: 0;
+        margin: 1rem;
     }
 
-    &__cardParragraph{
+    &__cardParragraph {
         text-align: center;
-        line-height: 0;
+        line-height: 1;
     }
 
-    &__boxes{
+    &__boxes {
         display: flex;
         gap: 2rem;
     }
 
     &__box {
         background-color: v.$blanco;
-        padding: 1rem 5rem;
+        padding: 1rem 4.5rem;
         text-align: center;
         border-radius: 2rem 0 2rem 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__boxTitle {
+        font-weight: 900;
+        font-size: 1.8rem;
+    }
+
+    &__boxText {
+        line-height: 1;
+    }
+
+    &__cta{
+        color: v.$primario;
+        font-size: 1.8rem;
     }
 }
+

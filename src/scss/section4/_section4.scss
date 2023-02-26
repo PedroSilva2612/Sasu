@@ -1,0 +1,50 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+.section4 {
+    margin-top: 5rem;
+
+    @include m.desktop {
+        @include m.grid(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+
+    &__title {
+        margin-top: 3rem;
+
+        @include m.tablet {
+            text-align: center;
+        }
+    }
+
+    &__parragraph {
+
+        @include m.tablet {
+            text-align: center;
+        }
+    }
+
+    &__ctaBox {
+        margin-top: 3rem;
+
+        @include m.tablet {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+    }
+
+    &__img {
+        margin: 0 auto;
+
+        @include m.desktop {
+            transition-property: transform ease-in;
+            transition-duration: .3s;
+
+            &:hover {
+                transform: rotate(5deg);
+            }
+        }
+    }
+}

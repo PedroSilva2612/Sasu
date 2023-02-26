@@ -1,4 +1,5 @@
 @use 'variables' as v; 
+@use 'base/mixins' as m;
 
 html {
     font-size: 62.5%;
@@ -26,4 +27,53 @@ ul {
     padding:0;
     list-style: none;
     margin: 0;
+}
+
+.cta1{
+    color: v.$blanco;
+    background-color: v.$primario;
+    padding: 1rem 3.8rem;
+    border-radius: .5rem;
+    font-weight: 700;
+    transition-property: background-color ease-in;
+    transition-duration: .3s;
+
+    &:hover{
+        background-color: #01adb3;
+    }
+}
+
+.cta2{
+    background-color: v.$blanco;
+    padding: 1rem 3.8rem;
+    font-weight: 700;
+    border: 2px #B7B7B7 solid;
+    border-radius: .5rem;
+    transition-property: background-color ease-in;
+    transition-duration: .3s;
+
+    &:hover {
+        background-color: v.$gris;
+    }
+}
+
+.card {
+    padding: 3rem 1.5rem;
+    background-color: v.$blanco;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+    @include m.desktop {
+        transition-property: transform ease-in;
+        transition-duration: .3s;
+        transform: scale(1);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }

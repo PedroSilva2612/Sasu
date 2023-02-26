@@ -1,6 +1,10 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+:root {
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: v.$gris;
 }
@@ -74,6 +78,15 @@ body{
 
         @include m.tablet { 
             margin: 2rem auto 0 auto;
+        }
+
+        @include m.desktop { 
+            transition: transform ease-in-out;
+            transition-duration: .3s;
+
+            &:hover{
+                transform: rotate(5deg);
+            }
         }
     }
 }

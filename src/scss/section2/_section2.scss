@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.section2 {
+
+    margin-top: 5rem;
+
+    @include m.desktop { 
+        @include m.grid(2, 1fr);
+        align-items: center;
+    }
+
+    
+    &__ctaBox{
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    &__img{
+        @include m.tablet { 
+            margin: 0 auto;
+        }
+
+        @include m.desktop { 
+            transition-property: transform ease-in-out;
+            transition-duration: .3s;
+
+            &:hover{
+                transform: rotate(-5deg);
+            }
+        }
+    }
+}
+

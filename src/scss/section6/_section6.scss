@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.section6 {
+    margin-top: 5rem;
+    height: 45rem;
+    background-color: v.$primario;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include m.desktop { 
+        background-image: url(../../../build/img/Bg-cta.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__box{
+        margin: auto;
+    }
+
+    &__title{
+        color: v.$blanco;
+        text-align: center;
+    }
+
+    &__parragraph {
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    &__ctaBox {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    &__cta{
+        background-color: v.$blanco;
+        color: v.$negro;
+        padding: 1.5rem;
+        font-weight: 700;
+        border-radius: 1rem;
+        transition-property: background-color;
+        transition-duration: .3s;
+
+        &:hover{
+            background-color: v.$gris;
+        }
+    }
+}

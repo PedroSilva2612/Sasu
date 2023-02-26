@@ -1,0 +1,82 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+.section5 {
+    margin-top: 5rem;
+
+    &__pricingBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include m.desktop {
+            @include m.grid(3, 1fr);
+            gap: 2rem;
+        }
+    }
+
+    &__title {
+        @include m.tablet {
+            text-align: center;
+        }
+    }
+
+    &__parragraph {
+        @include m.tablet {
+            text-align: center;
+        }
+    }
+}
+
+.pricing {
+    background-color: v.$blanco;
+    padding: 1rem 10rem;
+    margin-bottom: 2rem;
+    box-shadow: 12px 13px 10px -7px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 12px 13px 10px -7px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 12px 13px 10px -7px rgba(0, 0, 0, 1);
+    border-radius: 1rem;
+    cursor: pointer;
+
+    @include m.desktop {
+        margin-bottom: 0;
+        transition: transform ease-in-out;
+        transition-duration: .3s;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__img {
+        margin: 0 auto;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 0;
+        font-weight: 700;
+        font-size: 2.4rem;
+    }
+
+    &__price {
+        text-align: center;
+        font-size: 3.2rem;
+        margin: 0 auto;
+        font-weight: 700;
+
+        span {
+            color: v.$primario;
+            opacity: .5;
+        }
+    }
+
+    &__text {
+        text-align: center;
+    }
+}
